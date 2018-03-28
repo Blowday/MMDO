@@ -19,7 +19,14 @@
   <!--<li *ngFor="let current of results">{{ current.title }}</li>-->
 
 
+
   <ion-list>
+    <ion-list-header *ngIf="results && results.length > 0">
+      Results:
+    </ion-list-header>
+    <ion-list-header *ngIf="!results || results.length == 0">
+      No results
+    </ion-list-header>
     <ion-item *ngFor="let current of results">
       <ion-thumbnail item-start>
         <img [src]="current.image">
