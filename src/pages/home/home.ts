@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DetailsPage } from '../details/details';
 
 export interface Result {
   title : string;
@@ -32,9 +33,11 @@ const fakeResults : Result[] = [
 })
 export class HomePage {
   results: Result[];
+  pushPage : any;
 
   constructor(public navCtrl: NavController) {
     //this.results = fakeResults;
+    this.pushPage = DetailsPage;
   }
 
   getItems(ev: any) {
