@@ -15,10 +15,12 @@
 <ion-content padding>
 
   <h3>{{movie.title}}</h3>
-  <h6>{{movie.author}}</h6>
+  <p>id : {{movie.id}}</p>
+  <h6>rating : {{movie.vote_average}}</h6>
+  <h6>Date de sortie : {{movie.release_date}}</h6>
+  <p>Overview : {{movie.overview}}</p>
 
-  <img [src]="movie.image">
 
-  
+  <img [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path">
   
 </ion-content>

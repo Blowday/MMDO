@@ -7,17 +7,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailsPage } from '../pages/details/details';
+import { HttpClientModule } from '@angular/common/http';
+import { Shake } from '@ionic-native/shake';
+import { Subscription } from 'rxjs/subscription';
+import { Component } from '@angular/core';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetailsPage
+    DetailsPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,6 +33,7 @@ import { DetailsPage } from '../pages/details/details';
   providers: [
     StatusBar,
     SplashScreen,
+    Shake,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
